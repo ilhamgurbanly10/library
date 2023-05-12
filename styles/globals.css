@@ -14,3 +14,70 @@ a {
 * {
   box-sizing: border-box;
 }
+
+
+/* modal */
+
+.my-modal,
+.my-modal *,
+.my-modal *::before,
+.my-modal *::after {
+  box-sizing: border-box;
+}
+
+.my-modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgb(0, 0, 0, 0.4);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 999999;
+  transition: all .2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.my-modal-content {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  width: 90%;
+  min-height: 300px;
+  margin: 3rem 0;
+  position: relative;
+}
+
+.my-modal-close {
+  position: absolute;
+  color: grey;
+  top: 1rem;
+  right: 1rem;
+  background-color: transparent;
+  padding: 0;
+  border: 0 !important;
+  outline: 0 !important;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.my-modal-close:is(:hover,:active) {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+}
+
+@media (min-width: 992px) {
+
+  .my-modal-content {
+    width: 400px;
+  }
+
+}
+
+/* the-end-of-modal */
